@@ -80,7 +80,14 @@ void load_obj(model *m, const char *file_name)
             read_vertices(line, vn);
         }
     }
-
+    for(int i=0;i<vs->current_index;i++) {
+        printf("%f\n",vs->buf[i]);
+    }
+    printf("\n");
+    
+    for(int i=0;i<fs->current_index;i++) {
+        printf("%d\n",fs->buf[i]);
+    }
     create_model(m, vs, vn, fs);
 
     free_float_buffer(vs);
